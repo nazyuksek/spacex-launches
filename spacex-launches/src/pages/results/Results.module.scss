@@ -1,0 +1,9 @@
+.Results {
+    display: flex;
+    justify-content: center;
+    .launches {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+}

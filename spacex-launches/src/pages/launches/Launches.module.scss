@@ -1,5 +1,7 @@
 .Launches {
-    height: 100vh;
     width: 100vw;
-   
+   .animated {
+    display: flex;
+    justify-content: center;
+   }
 }

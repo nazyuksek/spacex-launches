@@ -6,6 +6,8 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
+import useDate from "@/hooks/useDate";
 
 export interface SearchProps {
   label?: string;
@@ -13,9 +15,13 @@ export interface SearchProps {
 
 const SearchComponent = ({ label }: SearchProps) => {
   const [startDate, setStartDate] = useState<Date>();
+  const { date, setDate } = useDate();
 
   useEffect(() => {
     setStartDate(new Date());
+    if (startDate) {
+      setDate(startDate);
+    }
   }, []);
 
   return (
@@ -37,8 +43,8 @@ const SearchComponent = ({ label }: SearchProps) => {
                         onChange={(date: Date) => {
                           if (date) {
                             setStartDate(date);
+                            setDate(date);
                           }
-                          console.log(date);
                         }}
                       />
                       <FontAwesomeIcon
@@ -51,7 +57,9 @@ const SearchComponent = ({ label }: SearchProps) => {
                 )}
               </div>
             </div>
-            <div className={styles.searchButton}>Search</div>
+            <Link href={"/results"} className={styles.searchButton}>
+              Search
+            </Link>
           </div>
         </div>
       </div>

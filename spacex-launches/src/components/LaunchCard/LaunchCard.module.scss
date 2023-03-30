@@ -1,0 +1,45 @@
+.LaunchCard {
+    display: flex;
+    border: 1px solid #fff;
+    padding: 2rem 1rem;
+    width: 95%;
+    margin-top: 2rem;
+    .image {
+        width: 10vw;
+    }
+    .right {
+       display: flex;
+       flex-direction: column; 
+       margin-left: 3rem;
+       justify-content: space-between;
+    }
+    .info {
+        display: flex;
+        flex-direction: column;
+        .name {
+            color: #fff;
+            font-weight: 600;
+            font-size: 2rem;
+        }
+        .date {
+            margin-top: 1.25rem;
+            color: #757575
+            
+        }
+    }
+    .learnButton {
+        color: #fff;
+        border: 2px solid #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1vh 2vw;
+        cursor: pointer;
+        width: fit-content;
+    }
+    .learnButton:hover {
+        background-color: #fff;
+        color: #000;
+    }
+    
+}
