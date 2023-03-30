@@ -5,7 +5,18 @@ export async function getLaunches() {
   return axios
     .get(`${URL}/launches`)
     .then((res) => {
-      console.log(res.data);
+      return res.data;
+    })
+    .catch((e) => {
+      return e;
+    });
+}
+
+export async function getLaunchDetails(id: string) {
+  const URL = "https://api.spacexdata.com/v5/launches/" + id;
+  return axios
+    .get(`${URL}`)
+    .then((res) => {
       return res.data;
     })
     .catch((e) => {

@@ -13,12 +13,12 @@ export interface ResultsPageProps {
 const ResultsPage = ({ label }: ResultsPageProps) => {
   const { launches, setLaunches } = useLaunches();
   const { date, setDate } = useDate();
+  const [id, setId] = useState<string>("");
 
   useEffect(() => {
     const fetchData = async () => {
       const res = await getLaunches();
       setLaunches(res);
-      console.log(date.toUTCString());
     };
     fetchData();
   }, []);
@@ -44,6 +44,7 @@ const ResultsPage = ({ label }: ResultsPageProps) => {
                 name={el.name}
                 image={el.links.patch.large}
                 date={getDate(el.date_utc)}
+                id={el.id}
               />
             );
           })}

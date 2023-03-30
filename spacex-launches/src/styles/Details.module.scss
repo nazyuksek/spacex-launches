@@ -1,0 +1,35 @@
+.Details {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 5%;
+    .back {
+        margin-left: 0.5rem;
+    }
+    .image {
+        height: 60vh;
+    }
+    .info {
+        height: 60vh;
+        margin-left: 5%;
+        display: flex;
+        flex-direction: column;
+    }
+    .name {
+        font-weight: 700;
+        font-size: 2rem;
+    }
+    .details {
+        color: #757575;
+        margin-top: 1rem;
+        line-height: 1.5;
+        font-size: 1.1rem;
+    }
+    .infoDetails {
+        display: flex;
+        height: 90vh;
+        align-items: center;
+    }
+}

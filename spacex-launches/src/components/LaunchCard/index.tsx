@@ -1,5 +1,6 @@
-import Image, { StaticImageData } from "next/image";
-import React from "react";
+import { getLaunchDetails } from "@/services/launchesService";
+import Link from "next/link";
+import React, { useEffect } from "react";
 import styles from "./LaunchCard.module.scss";
 
 export interface LaunchCardProps {
@@ -7,9 +8,16 @@ export interface LaunchCardProps {
   image: string;
   name: string;
   date: string;
+  id: string;
 }
 
-const LaunchCard = ({ label, name, image, date }: LaunchCardProps) => {
+const LaunchCard = ({ label, name, image, date, id }: LaunchCardProps) => {
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await getLaunchDetails(id);
+    };
+    fetchData();
+  }, []);
   return (
     <div className={styles.LaunchCard}>
       <img src={image} alt="img" className={styles.image} />
@@ -18,7 +26,9 @@ const LaunchCard = ({ label, name, image, date }: LaunchCardProps) => {
           <span className={styles.name}>{name}</span>
           <span className={styles.date}>{date}</span>
         </div>
-        <div className={styles.learnButton}>Learn More</div>
+        <Link className={styles.learnButton} href={`/${id}`}>
+          Learn More
+        </Link>
       </div>
     </div>
   );
