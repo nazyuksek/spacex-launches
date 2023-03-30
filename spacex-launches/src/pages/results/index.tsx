@@ -13,13 +13,21 @@ export interface ResultsPageProps {
 const ResultsPage = ({ label }: ResultsPageProps) => {
   const { launches, setLaunches } = useLaunches();
   const { date, setDate } = useDate();
-  const [id, setId] = useState<string>("");
 
   useEffect(() => {
     const fetchData = async () => {
       const res = await getLaunches();
       setLaunches(res);
     };
+    // console.log(
+    //   (date.getTime() - (date.getTime() % (60 * 60 * 24 * 1000))) / 1000
+    // );
+    // console.log(
+    //   (date.getTime() -
+    //     (date.getTime() % (60 * 60 * 24 * 1000)) +
+    //     60 * 60 * 24 * 1000) /
+    //     1000
+    // );
     fetchData();
   }, []);
 
@@ -38,16 +46,28 @@ const ResultsPage = ({ label }: ResultsPageProps) => {
     <div className={styles.Results}>
       <div className={styles.launches}>
         {launches &&
-          launches.map((el: any) => {
-            return (
-              <LaunchCard
-                name={el.name}
-                image={el.links.patch.large}
-                date={getDate(el.date_utc)}
-                id={el.id}
-              />
-            );
-          })}
+          launches
+            // .filter(
+            //   (el) =>
+            //     el.date_unix >=
+            //       (date.getTime() - (date.getTime() % (60 * 60 * 24 * 1000))) /
+            //         1000 &&
+            //     el.date_unix <=
+            //       (date.getTime() -
+            //         (date.getTime() % (60 * 60 * 24 * 1000)) +
+            //         60 * 60 * 24 * 1000) /
+            //         1000
+            // )
+            .map((el: any) => {
+              return (
+                <LaunchCard
+                  name={el.name}
+                  image={el.links.patch.large}
+                  date={getDate(el.date_utc)}
+                  id={el.id}
+                />
+              );
+            })}
       </div>
     </div>
   );
