@@ -1,0 +1,22 @@
+.Header {
+    padding: 5vh 7.5vh;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    @media screen and (max-width: 1023px) {
+        display: flex;
+        justify-content: center;
+     }
+     .logoContainer {
+        .logo {
+            width: 200px;
+            height: 30px;
+        }
+     }
+    .launchesText {
+        color: #ffffff;
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+}
