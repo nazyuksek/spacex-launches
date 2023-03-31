@@ -15,7 +15,7 @@ export interface LaunchCardProps {
 
 const LaunchCard = ({ label, name, image, date, id }: LaunchCardProps) => {
   useEffect(() => {
-    const fetchData = async () => {,
+    const fetchData = async () => {
       const res = await getLaunchDetails(id);
     };
     fetchData();
