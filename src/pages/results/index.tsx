@@ -13,6 +13,7 @@ export interface ResultsPageProps {
 const ResultsPage = ({ label }: ResultsPageProps) => {
   const { launches, setLaunches } = useLaunches();
   const { date, setDate } = useDate();
+  const [filteredLaunches, setFilteredLaunces] = useState<object[]>();
 
   function getDate(date: string) {
     const newDate = new Date(date).toString();
@@ -25,10 +26,27 @@ const ResultsPage = ({ label }: ResultsPageProps) => {
     );
   }
 
+  useEffect(() => {
+    setFilteredLaunces(
+      launches.filter(
+        (el: any) =>
+          el.date_unix >=
+            (date.getTime() - (date.getTime() % (60 * 60 * 24 * 1000))) /
+              1000 &&
+          el.date_unix <=
+            (date.getTime() -
+              (date.getTime() % (60 * 60 * 24 * 1000)) +
+              60 * 60 * 24 * 1000) /
+              1000
+      )
+    );
+  }, []);
+
   return (
     <div className={styles.Results}>
       <div className={styles.launches}>
-        {launches &&
+        {filteredLaunches &&
+          filteredLaunches.length !== 0 &&
           launches
             .filter(
               (el: any) =>
@@ -52,6 +70,9 @@ const ResultsPage = ({ label }: ResultsPageProps) => {
                 />
               );
             })}
+        {filteredLaunches?.length === 0 && (
+          <span className={styles.errorText}>No launches on this date!</span>
+        )}
       </div>
     </div>
   );
