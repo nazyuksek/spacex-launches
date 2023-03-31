@@ -30,7 +30,7 @@ const AnimatedNumbersComponent = ({ label }: AnimatedNumbersComponentProps) => {
       <div className={styles.numbersAndText}>
         <AnimatedNumber
           duration={duration}
-          value={launches.filter((el) => el.upcoming === true).length}
+          value={launches.filter((el: any) => el.upcoming === true).length}
           formatValue={formatValue}
           delay={1000}
           ref={animationRef}

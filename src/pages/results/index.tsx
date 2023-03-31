@@ -31,7 +31,7 @@ const ResultsPage = ({ label }: ResultsPageProps) => {
         {launches &&
           launches
             .filter(
-              (el) =>
+              (el: any) =>
                 el.date_unix >=
                   (date.getTime() - (date.getTime() % (60 * 60 * 24 * 1000))) /
                     1000 &&
@@ -48,6 +48,7 @@ const ResultsPage = ({ label }: ResultsPageProps) => {
                   image={el.links.patch.large}
                   date={getDate(el.date_utc)}
                   id={el.id}
+                  key={el.id}
                 />
               );
             })}

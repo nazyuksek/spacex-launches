@@ -21,7 +21,7 @@ const LaunchCard = ({ label, name, image, date, id }: LaunchCardProps) => {
     fetchData();
   }, []);
   return (
-    <div className={styles.LaunchCard}>
+    <div className={styles.LaunchCard} key={id}>
       {image ? (
         <img src={image} alt="img" className={styles.image} />
       ) : (
