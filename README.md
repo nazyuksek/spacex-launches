@@ -4,7 +4,7 @@ This is a web application for displaying SpaceX launches, implemented using Next
 
 Example launch dates for testing:
 
-1st of December, 2022
+1st of December, 2022 \n
 1st of November, 2022
 
 # How to run the project
