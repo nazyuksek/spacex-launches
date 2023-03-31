@@ -1,15 +1,16 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## spacex-launches
 
-## Getting Started
+This is a web application to display SpaceX launches, implemented using Next.js with TypeScript. It includes search by date functionality.
+
+Example dates for testing: 
+
+5th of December, 2022
+1st of November, 2022
+
+## How to start the project
 
 First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+```npm run dev```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then, open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
