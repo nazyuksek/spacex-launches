@@ -96,6 +96,17 @@
             }
         }
     }
+    .buttons {
+        display: flex;
+        width: 35%;
+        justify-content: space-between;
+        @media screen and (max-width: 1023px) {
+            flex-direction: column;
+            width: unset;
+            justify-content: space-between;
+            height: 100%;
+        }
+    }
 
     
 }

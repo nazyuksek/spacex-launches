@@ -57,9 +57,14 @@ const SearchComponent = ({ label }: SearchProps) => {
                 )}
               </div>
             </div>
-            <Link href={"/results"} className={styles.searchButton}>
-              Search
-            </Link>
+            <div className={styles.buttons}>
+              <Link href={"/results/all"} className={styles.searchButton}>
+                Show All
+              </Link>
+              <Link href={"/results"} className={styles.searchButton}>
+                Search
+              </Link>
+            </div>
           </div>
         </div>
       </div>
