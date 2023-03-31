@@ -36,6 +36,7 @@ const ResultsPage = ({ label }: ResultsPageProps) => {
                 image={el.links.patch.large}
                 date={getDate(el.date_utc)}
                 id={el.id}
+                key={el.id}
               />
             );
           })}

@@ -15,11 +15,11 @@ export interface LaunchCardProps {
 
 const LaunchCard = ({ label, name, image, date, id }: LaunchCardProps) => {
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchData = async () => {,
       const res = await getLaunchDetails(id);
     };
     fetchData();
-  }, []);
+  }, [id]);
   return (
     <div className={styles.LaunchCard} key={id}>
       {image ? (
