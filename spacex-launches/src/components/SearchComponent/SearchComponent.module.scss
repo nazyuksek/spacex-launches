@@ -16,6 +16,12 @@
         height: 20vh;
         top: 50%;
         left: 25vw;
+        @media screen and (max-width:  1023px) {
+            height: 15vh;
+            width: 90%;
+            left: 5vw;
+            top: 80%;
+        }
     }
     .searchContent {
         padding: 3vh 2vw;
@@ -23,11 +29,18 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
+        @media screen and (max-width:  1023px) {
+            padding: 2vh 3vw;
+        }
         .searchButton {
             background-color: #387795;
             color: #fff;
             padding: 1vh 2vw;
             cursor: pointer;
+            @media screen and (max-width:  1023px) {
+               font-size: 0.85rem;
+               padding: 1vh 5vw;
+            }
         }
         .searchLeft {
             height: 90%;
@@ -38,10 +51,16 @@
         .searchTitle {
             font-weight: 600;
             font-size: 1.25rem;
+            @media screen and (max-width:  1023px) {
+                font-size: 1rem;
+            }
         }
         .launchTitle {
             color: #cccccc;
             font-size: 0.9rem;
+            @media screen and (max-width:  1023px) {
+                font-size: 0.75rem;
+            }
         }
         .datePickerContainer {
             border: 1px solid #000;
@@ -59,6 +78,9 @@
                 border-right: none;
                 border-bottom: 2px solid #000;
                 width: 16vw;
+                @media screen and (max-width:  1023px) {
+                   width: unset;
+                }
             }
             input:focus-visible {
                 outline: none;

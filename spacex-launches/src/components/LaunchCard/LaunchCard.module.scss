@@ -4,14 +4,24 @@
     padding: 2rem 1rem;
     width: 95%;
     margin-top: 2rem;
+    @media screen and (max-width: 1023px) {
+        width: 90%;
+        padding: 1rem;
+    }
     .image {
         width: 10vw;
+        @media screen and (max-width: 1023px) {
+            width: 25vw;
+        }
     }
     .right {
        display: flex;
        flex-direction: column; 
        margin-left: 3rem;
        justify-content: space-between;
+       @media screen and (max-width: 727px) {
+        margin-left: 2rem;
+    }
     }
     .info {
         display: flex;
@@ -20,10 +30,18 @@
             color: #fff;
             font-weight: 600;
             font-size: 2rem;
+            @media screen and (max-width: 727px) {
+                font-size: 1.2rem;
+            }
         }
         .date {
             margin-top: 1.25rem;
-            color: #757575
+            color: #757575;
+            @media screen and (max-width: 727px) {
+                font-size: 0.9rem;
+                margin-top: 0.75rem;
+            }
+            
             
         }
     }
@@ -36,6 +54,10 @@
         padding: 1vh 2vw;
         cursor: pointer;
         width: fit-content;
+        @media screen and (max-width: 727px) {
+            font-size: 0.9rem;
+            padding: 1vh 3vw;
+        }
     }
     .learnButton:hover {
         background-color: #fff;

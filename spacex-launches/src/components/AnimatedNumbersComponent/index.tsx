@@ -3,6 +3,7 @@ import SearchComponent from "@/components/SearchComponent";
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./AnimatedNumbersComponent.module.scss";
 import AnimatedNumber from "animated-number-react";
+import useLaunches from "@/hooks/useLaunches";
 
 export interface AnimatedNumbersComponentProps {
   label?: string;
@@ -13,13 +14,14 @@ const AnimatedNumbersComponent = ({ label }: AnimatedNumbersComponentProps) => {
   const formatValue = (value: number) => value.toFixed(0);
   const animationRef = useRef(null);
   const [top, setTop] = useState<number>(0);
+  const { launches } = useLaunches();
 
   return (
     <div className={styles.Animated}>
       <div className={styles.numbersAndText}>
         <AnimatedNumber
           duration={duration}
-          value={218}
+          value={launches.length}
           formatValue={formatValue}
           delay={1000}
         />
@@ -28,7 +30,7 @@ const AnimatedNumbersComponent = ({ label }: AnimatedNumbersComponentProps) => {
       <div className={styles.numbersAndText}>
         <AnimatedNumber
           duration={duration}
-          value={218}
+          value={launches.filter((el) => el.upcoming === true).length}
           formatValue={formatValue}
           delay={1000}
           ref={animationRef}

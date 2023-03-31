@@ -14,23 +14,6 @@ const ResultsPage = ({ label }: ResultsPageProps) => {
   const { launches, setLaunches } = useLaunches();
   const { date, setDate } = useDate();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await getLaunches();
-      setLaunches(res);
-    };
-    // console.log(
-    //   (date.getTime() - (date.getTime() % (60 * 60 * 24 * 1000))) / 1000
-    // );
-    // console.log(
-    //   (date.getTime() -
-    //     (date.getTime() % (60 * 60 * 24 * 1000)) +
-    //     60 * 60 * 24 * 1000) /
-    //     1000
-    // );
-    fetchData();
-  }, []);
-
   function getDate(date: string) {
     const newDate = new Date(date).toString();
     return (

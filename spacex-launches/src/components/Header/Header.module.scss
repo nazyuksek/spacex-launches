@@ -7,7 +7,7 @@
     flex-direction: row;
     @media screen and (max-width: 1023px) {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
      }
      .logoContainer {
         .logo {
@@ -19,5 +19,8 @@
         color: #ffffff;
         font-size: 1.25rem;
         font-weight: 700;
+        @media screen and (max-width:  1023px) {
+            display: none;
+        }
     }
 }

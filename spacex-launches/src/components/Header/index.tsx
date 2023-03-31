@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Header.module.scss";
 import Logo from "../../assets/png/logo.png";
 import Image from "next/image";
+import Link from "next/link";
 
 export interface HeaderProps {
   label?: string;
@@ -10,9 +11,9 @@ export interface HeaderProps {
 const Header = ({ label }: HeaderProps) => {
   return (
     <div className={styles.Header}>
-      <div className={styles.logoContainer}>
+      <Link href="/" className={styles.logoContainer}>
         <Image src={Logo} alt="logo" className={styles.logo} />
-      </div>
+      </Link>
       <span className={styles.launchesText}>SpaceX Launches</span>
     </div>
   );

@@ -6,6 +6,19 @@
     display: flex;
     justify-content: space-between;
     width: 50%;
+    @media screen and (max-width: 767px) {
+        width: 100%;
+        flex-direction: column;
+        height: 35vh;
+        margin-top: 15vh;
+    }
+    @media screen and (min-width:  768px) and (max-width: 1023px) {
+        width: 100%;
+        flex-direction: column;
+        height: 35vh;
+        margin-top: 10vh;
+        padding-bottom: 5vh;
+    }
     .numbersAndText {
         display: flex;
         flex-direction: column;
@@ -13,11 +26,17 @@
         font-size: 5rem;
         justify-content: center;
         font-weight: 700;
+        @media screen and (max-width:  1023px) {
+            font-size: 4rem;
+        }
     }
     .subtitle {
         font-size: 1.25rem;
         font-weight: 400;
         margin-top: 1rem;
+        @media screen and (max-width:  1023px) {
+            font-size: 1rem;
+        }
     }
     .fade-in {
         transition: opacity 1s ease;
