@@ -30,17 +30,17 @@ const ResultsPage = ({ label }: ResultsPageProps) => {
       <div className={styles.launches}>
         {launches &&
           launches
-            // .filter(
-            //   (el) =>
-            //     el.date_unix >=
-            //       (date.getTime() - (date.getTime() % (60 * 60 * 24 * 1000))) /
-            //         1000 &&
-            //     el.date_unix <=
-            //       (date.getTime() -
-            //         (date.getTime() % (60 * 60 * 24 * 1000)) +
-            //         60 * 60 * 24 * 1000) /
-            //         1000
-            // )
+            .filter(
+              (el) =>
+                el.date_unix >=
+                  (date.getTime() - (date.getTime() % (60 * 60 * 24 * 1000))) /
+                    1000 &&
+                el.date_unix <=
+                  (date.getTime() -
+                    (date.getTime() % (60 * 60 * 24 * 1000)) +
+                    60 * 60 * 24 * 1000) /
+                    1000
+            )
             .map((el: any) => {
               return (
                 <LaunchCard
