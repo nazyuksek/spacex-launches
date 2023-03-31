@@ -35,7 +35,11 @@ const Details = ({ label }: DetailsProps) => {
         <span className={styles.back}>Back to results</span>
       </Link>
       <div className={styles.infoDetails}>
-        <img src={details?.links.patch.large} className={styles.image} />
+        <img
+          src={details?.links.patch.large}
+          className={styles.image}
+          alt="img"
+        />
         <div className={styles.info}>
           <span className={styles.name}>{details?.name}</span>
           <span className={styles.details}>{details?.details}</span>

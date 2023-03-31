@@ -29,7 +29,7 @@ const LaunchesPage = ({ label }: LaunchPageProps) => {
     //     1000
     // );
     fetchData();
-  }, []);
+  }, [setLaunches]);
 
   return (
     <div className={styles.Launches}>

@@ -22,7 +22,7 @@ const SearchComponent = ({ label }: SearchProps) => {
     if (startDate) {
       setDate(startDate);
     }
-  }, []);
+  }, [setDate, startDate]);
 
   return (
     <div className={styles.Search}>
